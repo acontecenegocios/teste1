@@ -1,0 +1,93 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 16px;
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f44b4b;
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Categorias */
+.categorias {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.subcategorias {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.subcategorias li {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.subcategorias li:hover {
+    transform: scale(1.05);
+}
+
+.subcategorias li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Banners */
+.banner-container {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.banner {
+    background-color: #ccc;
+    height: 80px;
+    max-width: 100%;
+    margin: 0 auto;
+    animation: slide 5s infinite linear;
+}
+
+@keyframes slide {
+    0%, 100% {
+        background-position: left;
+    }
+    50% {
+        background-position: right;
+    }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+}
