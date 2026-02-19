@@ -1,67 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Guia Acontece Negócios - Os Melhores Negócios de Itu">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <title>Guia Acontece Negócios</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Responsivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-container {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .options {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    .options li {
+      background: #e4e4e4;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .options li:hover {
+      background: #d4d4d4;
+    }
+
+    .btn {
+      background: #4CAF50;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #45a049;
+    }
+
+    .score {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 500px) {
+      .quiz-container {
+        padding: 15px 20px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container"></div>
-        <h1>Guia Acontece Negócios</h1>
-        <h2>Os Melhores Negócios de Itu</h2>
-    </header>
+  <div class="quiz-container">
+    <h2 id="question">Pergunta</h2>
+    <ul class="options" id="options">
+      <!-- Opções serão adicionadas aqui -->
+    </ul>
+    <button class="btn" id="nextBtn">Próxima</button>
+    <div class="score" id="score"></div>
+  </div>
 
-    <!-- Banner superior -->
-    <div class="banner-container">
-        <div class="banner" id="banner-top"></div>
-    </div>
+  <script>
+    const quizData = [
+      {
+        question: "Qual é a capital do Brasil?",
+        options: ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"],
+        answer: "Brasília"
+      },
+      {
+        question: "Qual é o maior planeta do Sistema Solar?",
+        options: ["Terra", "Júpiter", "Saturno", "Marte"],
+        answer: "Júpiter"
+      },
+      {
+        question: "Quem escreveu 'Dom Casmurro'?",
+        options: ["Machado de Assis", "José de Alencar", "Cecília Meireles", "Clarice Lispector"],
+        answer: "Machado de Assis"
+      }
+    ];
 
-    <main>
-        <!-- Subcategorias -->
-        <section class="categorias">
-            <ul class="subcategorias">
-                <li><a href="academias.html"><i class="fas fa-dumbbell"></i> Academia</a></li>
-                <li><a href="adegasetabacarias.html"><i class="fas fa-wine-glass-alt"></i> Adegas e Tabacaria</a></li>
-                <li><a href="alinhamentoebalanceamento.html"><i class="fas fa-car"></i> Alinhamento e Balanceamento</a></li>
-                <li><a href="apartamentonaplanta.html"><i class="fas fa-building"></i> Apartamentos na Planta</a></li>
-                <li><a href="autoeletrica.html"><i class="fas fa-bolt"></i> Auto Elétrica</a></li>
-                <li><a href="barbearia.html"><i class="fas fa-cut"></i> Barbearia</a></li>
-                <li><a href="brechochic.html"><i class="fas fa-tshirt"></i> Brechó Chic</a></li>
-                <li><a href="cestasdepresentes.html"><i class="fas fa-gift"></i> Cestas de Presentes</a></li>
-                <li><a href="centroderecreacao.html"><i class="fas fa-home"></i> Centro de Recreação</a></li>
-                <li><a href="correspondentesbancarios.html"><i class="fas fa-university"></i> Corresp. Bancário</a></li>
-                <li><a href="desmanches.html"><i class="fas fa-tools"></i> Desmanches</a></li>
-                <li><a href="empilhadeira.html"><i class="fas fa-cogs"></i> Empilhadeiras</a></li>
-                <li><a href="emprestimos.html"><i class="fas fa-credit-card"></i> Empréstimos</a></li>
-                <li><a href="esteticaautomotiva.html"><i class="fas fa-car-alt"></i> Estética Automotiva</a></li>
-                <li><a href="esteticaemassoterapia.html"><i class="fas fa-spa"></i> Estética e Massoterapia</a></li>
-                <li><a href="flores"><i class="fas fa-seedling"></i> Flores e Decoração</a></li>
-                <li><a href="#"><i class="fas fa-gavel"></i> Leilão de Imóveis</a></li>
-                <li><a href="maquinasdelavar.html"><i class="fas fa-tshirt"></i> Máquinas de Lavar</a></li>
-                <li><a href="materialdeconstrucao.html"><i class="fas fa-hammer"></i> Material de Construção</a></li>
-                <li><a href="moveisplanejados.html"><i class="fas fa-couch"></i> Móveis Planejados</a></li>
-                <li><a href="oticas.html"><i class="fas fa-glasses"></i> Óticas</a></li>
-                <li><a href="pastelarias.html"><i class="fas fa-utensils"></i> Pastelarias</a></li>
-                <li><a href="pizzarias.html"><i class="fas fa-pizza-slice"></i> Pizzarias</a></li>
-                <li><a href="seguros.html"><i class="fas fa-shield-alt"></i> Seguros</a></li>
-            </ul>
-        </section>
-    </main>
+    let currentQuestion = 0;
+    let score = 0;
 
-    <!-- Banner inferior -->
-    <div class="banner-container">
-        <div class="banner" id="banner-bottom"></div>
-    </div>
+    const questionEl = document.getElementById("question");
+    const optionsEl = document.getElementById("options");
+    const nextBtn = document.getElementById("nextBtn");
+    const scoreEl = document.getElementById("score");
 
-    <footer>
-        <p>&copy; 2024 Guia Acontece Negócios - Todos os direitos reservados.</p>
-    </footer>
+    function loadQuestion() {
+      const currentQuiz = quizData[currentQuestion];
+      questionEl.textContent = currentQuiz.question;
+      optionsEl.innerHTML = "";
+      currentQuiz.options.forEach(option => {
+        const li = document.createElement("li");
+        li.textContent = option;
+        li.addEventListener("click", selectOption);
+        optionsEl.appendChild(li);
+      });
+    }
 
-    <script src="script.js"></script>
+    function selectOption(e) {
+      const selected = e.target.textContent;
+      const correct = quizData[currentQuestion].answer;
+      if(selected === correct) score++;
+      Array.from(optionsEl.children).forEach(li => {
+        li.style.pointerEvents = "none";
+        if(li.textContent === correct) li.style.background = "#4CAF50";
+        else if(li.textContent === selected) li.style.background = "#f44336";
+      });
+    }
+
+    nextBtn.addEventListener("click", () => {
+      currentQuestion++;
+      if(currentQuestion < quizData.length){
+        loadQuestion();
+      } else {
+        showScore();
+      }
+    });
+
+    function showScore() {
+      questionEl.textContent = "Fim do Quiz!";
+      optionsEl.innerHTML = "";
+      nextBtn.style.display = "none";
+      scoreEl.textContent = `Você acertou ${score} de ${quizData.length} perguntas!`;
+    }
+
+    loadQuestion();
+  </script>
 </body>
 </html>
